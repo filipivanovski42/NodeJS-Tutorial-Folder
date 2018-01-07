@@ -8,7 +8,7 @@ const notes = require('./notes.js');
 
 const argv = yargs.argv;
 
-var command = process.argv[2];
+var command = argv._[0];
 console.log('Command: ', command);
 console.log('Yargs', argv);
 
@@ -18,11 +18,11 @@ if (command === 'add')
 }
 else if (command === 'read')
 {
-  notes.getNote(title);
+  notes.getNote(argv.title);
 }
 else if (command === 'remove')
 {
-  notes.removeNote(title);
+  notes.removeNote(argv.title);
 }
 else if (command === 'list')
 {
